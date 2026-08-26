@@ -20,7 +20,7 @@ export const site = {
 
   ogImagePath: "/og.png",
 
-  siteUrl: "https://TODO-final-domain.vercel.app",
+  siteUrl: "https://dilpreet-singh-portfolio.vercel.app",
 
   description:
     "Portfolio of Dilpreet Singh — search algorithms, multi-role web applications, embedded sensor networks, and applied ML.",
