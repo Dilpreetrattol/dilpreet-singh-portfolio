@@ -13,7 +13,7 @@ export const site = {
 
   email: "dilpreersr.work@gmail.com",
 
-  linkedinUrl: "https://www.linkedin.com/in/dilpreet-singh",
+  linkedinUrl: "https://www.linkedin.com/in/dilpreetrattol",
 
   // Single resume, single button — no variants, no dropdown.
   resumePath: "/resume/dilpreet-singh-resume.pdf",
@@ -30,7 +30,7 @@ export const beyondCode = [
   {
     role: "Head of Marketing",
     org: "SSA VIRSA",
-    note: "Large cultural society.",
+    note: "TIET's largest cultural society.",
   },
   {
     role: "Mentor",
