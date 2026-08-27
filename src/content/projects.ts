@@ -96,6 +96,7 @@ export const projects: Project[] = [
     oneLiner:
       "A research project on multimodal medical image fusion using a dual-encoder architecture with explainability.",
     stack: ["Python", "PyTorch", "Grad-CAM", "Federated Learning"],
+    team: { size: 4 },
     details: {
       problem:
         "Breast cancer detection from a single imaging modality misses information the other modality carries — PET captures metabolic activity, MRI captures structural detail. Fusing them can improve detection, but naively combining two imaging modalities risks losing the interpretability clinicians need to trust a model's output, and centralizing sensitive medical imaging data across institutions raises privacy concerns.",
@@ -129,5 +130,16 @@ export const projects: Project[] = [
       outcome:
         "The tracker is in active use for the current placement season; the dashboard and analytics views are functional and being extended as the season progresses.",
     },
+  },
+  {
+    slug: "rfid-security",
+    title: "RFID Home Security System",
+    tags: ["Embedded / IoT"],
+    language: "C++",
+    oneLiner:
+      "An access control system with RFID card authentication driving a solenoid lock.",
+    stack: ["Arduino Uno", "RFID-RC522", "C++"],
+    // TODO: confirm this is the exact repo name/casing once pushed.
+    repoUrl: "https://github.com/Dilpreetrattol/rfid-security",
   },
 ];

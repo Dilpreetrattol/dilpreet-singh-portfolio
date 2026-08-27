@@ -2,23 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Color tokens as CSS custom properties (RGB triples, so Tailwind's
+ * `rgb(var(--x) / <alpha-value>)` mapping in tailwind.config.ts gets
+ * opacity-modifier support for free — e.g. `bg-accent/10`).
+ *
+ * Light values live on :root; .dark overrides them. Every component then
+ * just uses `bg-surface-1`, `text-ink-dim`, etc. with no `dark:` prefix —
+ * the variable itself swaps, not the class.
+ */
 :root {
   color-scheme: light;
+
+  --color-bg: 247 244 239; /* warm paper #f7f4ef */
+  --color-surface-1: 255 255 255;
+  --color-surface-2: 241 236 227;
+  --color-border: 231 226 217;
+  --color-border-lit: 209 202 190;
+
+  --color-ink: 23 21 15; /* #17150f */
+  --color-ink-dim: 87 82 76;
+  --color-ink-mute: 114 108 101;
+
+  /* darkened accent so white button text and the color-as-text case both
+     clear AA on the light paper background — see tailwind.config.ts */
+  --color-accent: 162 96 0; /* oklch(0.55 0.14 72) */
+
+  /* category hues, darkened the same way as accent for light-mode contrast
+     (oklch L 0.58, C 0.14, same hues as dark mode) */
+  --color-cat-algorithms: 172 105 0;
+  --color-cat-ml: 136 100 192;
+  --color-cat-web: 0 137 184;
+  --color-cat-embedded: 58 143 66;
 }
 
 .dark {
   color-scheme: dark;
+
+  --color-bg: 12 11 15; /* #0c0b0f */
+  --color-surface-1: 20 19 25;
+  --color-surface-2: 28 26 34;
+  --color-border: 42 39 49;
+  --color-border-lit: 61 56 70;
+
+  --color-ink: 244 241 238; /* warm off-white #f4f1ee */
+  --color-ink-dim: 162 157 153;
+  /* spec gave #6f6a66 here, but that's only 3.7:1 on --bg — fails AA for
+     text. Lightened to #837e7a (~4.6-4.9:1 on bg/surface-1) keeping the
+     same warm-gray hue. */
+  --color-ink-mute: 131 126 122;
+
+  --color-accent: 237 165 74; /* #eda54a, oklch(0.78 0.14 72) */
+
+  /* full-brightness hues at dark-surface contrast (8-9:1) */
+  --color-cat-algorithms: 237 165 74;
+  --color-cat-ml: 197 162 255;
+  --color-cat-web: 41 201 250;
+  --color-cat-embedded: 122 207 126;
 }
 
 body {
-  @apply bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
+  @apply bg-bg text-ink;
 }
 
 ::selection {
-  @apply bg-accent/30;
+  @apply bg-accent/20;
 }
 
 :focus-visible {
-  outline: 2px solid theme("colors.accent.DEFAULT");
+  outline: 2px solid rgb(var(--color-accent));
   outline-offset: 2px;
+}
+
+/*
+ * Stage 4 motion — reduced-motion is handled once, globally, rather than
+ * annotating every hover/reveal/filter transition individually (easy to
+ * miss one that way). This is the standard blanket pattern: it zeroes out
+ * every animation/transition and strips transforms, so a hover lift, a
+ * scroll reveal, or a filter fade all just resolve to their end state
+ * instantly instead of animating. Not optional per spec.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    scroll-behavior: auto !important;
+  }
 }
