@@ -124,7 +124,7 @@ export const projects: Project[] = [
       problem:
         "Tracking applications across a placement season — which companies applied to, at what stage, with what outcome — gets unwieldy in a spreadsheet once the number of applications grows, and a spreadsheet has no way to visualize pipeline status at a glance.",
       approach:
-        "A Flask backend with a SQLite database models companies, application stages, and outcomes, with a dashboard on top rendering pipeline status and outcome analytics via Chart.js. It was written from scratch without AI code generation, deliberately, as an exercise in Flask fundamentals — routing, templating, and the ORM layer — rather than to ship the fastest possible version.",
+        "A Flask backend with a SQLite database models companies, application stages, and outcomes, with a dashboard on top rendering pipeline status and outcome analytics via Chart.js. It was built deliberately from scratch as an exercise in Flask fundamentals — routing, templating, and the ORM layer — rather than to ship the fastest possible version.",
       challenges:
         "Modelling an application's lifecycle (applied → shortlisted → interview rounds → result) as clean database state that the dashboard could aggregate cleanly, while keeping the schema simple enough to extend as new stages or companies came up during the season.",
       outcome:

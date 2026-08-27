@@ -49,15 +49,16 @@ export const navLinks = [
 export const about = [
   "I build things that have to work under scrutiny — a chess engine that has to search a tree correctly, a multi-role web app that has to enforce permissions correctly, a sensor that has to report a real number, not a comforting one. The common thread is systems: search algorithms, application architecture, hardware built for the physical world, not a simulator.",
   "Electrical and Computer Engineering put me on the boundary between those worlds, so I treat software and hardware as one discipline — calibrating a sensor's resistance curve and designing role-based access control are the same problem: get the model right, then handle what reality does to it.",
-  "Right now I'm building PlacementLog, a placement tracker I'm writing from scratch without AI-generated code, to get Flask fundamentals into muscle memory.",
 ] as const;
+
+// Short closing line under the About paragraphs.
+export const aboutTagline = "Building things that work.";
 
 // About section, right column — compact "Currently" facts.
 export const currently = [
   { label: "FOCUS", value: "Systems, applied ML, embedded" },
   { label: "STUDYING", value: "B.E. EEC, Thapar Institute" },
   { label: "GRADUATING", value: "May 2027" },
-  { label: "BUILDING", value: "PlacementLog" },
   { label: "BASED", value: "Patiala, India" },
 ] as const;
 
