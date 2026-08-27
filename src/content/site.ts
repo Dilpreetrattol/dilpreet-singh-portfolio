@@ -30,6 +30,19 @@ export const site = {
     "Portfolio of Dilpreet Singh — search algorithms, multi-role web applications, embedded sensor networks, and applied ML.",
 } as const;
 
+// In-page nav, shown in the header on wider screens. Order matches the
+// order sections appear on the page. Absolute-path hashes (not bare `#…`)
+// so the header works correctly from project detail pages too, not just
+// the homepage — same pattern the detail page's own "Back to projects"
+// link already uses.
+export const navLinks = [
+  { label: "About", href: "/#about" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Beyond Code", href: "/#beyond-code" },
+  { label: "Contact", href: "/#contact" },
+] as const;
+
 // About section, left column. First-person, specific, no invented
 // internships/awards/metrics — draft from what the project data actually
 // contains.

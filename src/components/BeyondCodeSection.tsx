@@ -7,7 +7,7 @@ export function BeyondCodeSection() {
     <section
       id="beyond-code"
       aria-label="Beyond code"
-      className="border-t border-border"
+      className="scroll-mt-16 border-t border-border"
     >
       <div className="mx-auto max-w-content px-6 py-20 sm:py-28">
         <SectionHeading>Beyond code</SectionHeading>

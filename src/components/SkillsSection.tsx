@@ -8,7 +8,7 @@ export function SkillsSection() {
     <section
       id="skills"
       aria-label="Skills"
-      className="border-t border-border"
+      className="scroll-mt-16 border-t border-border"
     >
       <div className="mx-auto max-w-content px-6 py-20 sm:py-28">
         <SectionHeading>Skills</SectionHeading>

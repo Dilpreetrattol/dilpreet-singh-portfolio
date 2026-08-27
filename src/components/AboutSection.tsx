@@ -4,7 +4,7 @@ import { SectionHeading } from "./SectionHeading";
 
 export function AboutSection() {
   return (
-    <section id="about" aria-label="About" className="border-t border-border">
+    <section id="about" aria-label="About" className="scroll-mt-16 border-t border-border">
       <div className="mx-auto max-w-content px-6 py-20 sm:py-28">
         <SectionHeading>About</SectionHeading>
 

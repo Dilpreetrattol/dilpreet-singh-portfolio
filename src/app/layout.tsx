@@ -78,7 +78,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${spaceGrotesk.variable} ${publicSans.variable} ${jetbrainsMono.variable}`}
+      className={`dark scroll-smooth ${spaceGrotesk.variable} ${publicSans.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>

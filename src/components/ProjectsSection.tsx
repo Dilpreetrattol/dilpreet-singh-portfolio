@@ -77,7 +77,11 @@ export function ProjectsSection() {
   useEffect(() => () => clearTimeout(exitTimer.current), []);
 
   return (
-    <section id="projects" aria-label="Projects" className="mx-auto max-w-content px-6 py-20 sm:py-28">
+    <section
+      id="projects"
+      aria-label="Projects"
+      className="mx-auto max-w-content scroll-mt-16 px-6 py-20 sm:py-28"
+    >
       <SectionHeading>Projects</SectionHeading>
 
       <div role="group" aria-label="Filter projects by category" className="mt-8 flex flex-wrap gap-2">
