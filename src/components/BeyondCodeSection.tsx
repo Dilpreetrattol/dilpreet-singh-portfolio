@@ -1,4 +1,5 @@
 import { beyondCode } from "@/content/site";
+import { accentDots } from "@/lib/accentDots";
 import { FadeIn } from "./FadeIn";
 import { SectionHeading } from "./SectionHeading";
 
@@ -20,7 +21,8 @@ export function BeyondCodeSection() {
               delay={Math.min(index, 4) * 60}
               className="rounded-lg border border-border p-5"
             >
-              <p className="font-medium text-ink">
+              <p className="flex items-center gap-2 font-medium text-ink">
+                <span className={`h-1.5 w-1.5 rounded-full ${accentDots[index % accentDots.length]}`} aria-hidden="true" />
                 {item.role} <span className="text-ink-mute">·</span>{" "}
                 <span className="font-mono text-sm text-ink-dim">{item.org}</span>
               </p>

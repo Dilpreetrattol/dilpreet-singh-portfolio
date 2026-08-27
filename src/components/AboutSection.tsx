@@ -1,4 +1,5 @@
-import { about, currently, stats } from "@/content/site";
+import { about, aboutTagline, currently, stats } from "@/content/site";
+import { accentDots } from "@/lib/accentDots";
 import { FadeIn } from "./FadeIn";
 import { SectionHeading } from "./SectionHeading";
 
@@ -15,6 +16,7 @@ export function AboutSection() {
                 {paragraph}
               </p>
             ))}
+            <p className="font-display text-lg font-semibold text-ink">{aboutTagline}</p>
           </FadeIn>
 
           <FadeIn as="div" delay={80} className="lg:col-span-2">
@@ -22,9 +24,13 @@ export function AboutSection() {
               Currently
             </h3>
             <dl className="mt-3 divide-y divide-border border-t border-border">
-              {currently.map((item) => (
+              {currently.map((item, index) => (
                 <div key={item.label} className="flex items-baseline justify-between gap-4 py-2.5">
-                  <dt className="font-mono text-xs uppercase tracking-wider text-ink-mute">
+                  <dt className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-ink-mute">
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${accentDots[index % accentDots.length]}`}
+                      aria-hidden="true"
+                    />
                     {item.label}
                   </dt>
                   <dd className="font-mono text-sm text-ink">{item.value}</dd>

@@ -39,6 +39,7 @@ const config: Config = {
           ml: fromVar("--color-cat-ml"),
           web: fromVar("--color-cat-web"),
           embedded: fromVar("--color-cat-embedded"),
+          languages: fromVar("--color-cat-languages"),
         },
       },
       fontFamily: {
